@@ -1,0 +1,390 @@
+<!-- Updated portfolio HTML for Ayushi Sahu will be placed here. Due to length, I will start with a clean structure and then you can request edits/expansions section by section. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ayushi Sahu — Frontend Developer (Angular)</title>
+  <meta name="description" content="Ayushi Sahu — Frontend Developer with 4+ years experience building scalable Angular apps (12–15). TypeScript, RxJS, SCSS, performance, accessibility." />
+  <meta name="keywords" content="Ayushi Sahu, Frontend Developer, Angular, TypeScript, RxJS, UI/UX, Figma" />
+  <meta property="og:title" content="Ayushi Sahu — Frontend Developer (Angular)" />
+  <meta property="og:description" content="Frontend Developer with 4+ years experience building high-performance Angular applications. Portfolio of projects and contact." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" />
+  <meta name="author" content="Ayushi Sahu" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Palette & Reset ---------- */
+    :root{
+      --bg: #f7f9fc;
+      --card: rgba(255,255,255,0.8);
+      --muted: #7b8794;
+      --accent: #8ab6ff; /* powder blue */
+      --accent-2: #cdb4db; /* lavender */
+      --accent-3: #bde4c7; /* mint */
+      --accent-4: #ffd6e0; /* soft pink */
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 8px 30px rgba(16,24,40,0.06);
+      --radius: 14px;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,var(--bg),#fff); color:#0f1724; -webkit-font-smoothing:antialiased; scroll-behavior:smooth}
+
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    /* ---------- Layout ---------- */
+    .wrap{max-width:1100px;margin:28px auto;padding:24px}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .nav-links{display:flex;gap:12px;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:600}
+    .nav-links a.active, .nav-links a:hover{background:var(--glass);color:#0f1724}
+
+    /* ---------- Hero ---------- */
+    .hero{display:grid;grid-template-columns: 1fr 420px;gap:28px;align-items:center;padding:28px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,0.65),rgba(255,255,255,0.9));box-shadow:var(--shadow)}
+    .hero-left{padding:12px}
+    .eyebrow{color:var(--muted);font-size:14px;font-weight:600}
+    h1{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:8px 0}
+    .sub{color:var(--muted);max-width:68ch;line-height:1.6}
+    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:12px;border:none;font-weight:700;cursor:pointer;text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#06202e;box-shadow:0 8px 18px rgba(135,158,255,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,36,0.06);color:var(--muted)}
+
+    .hero-right{display:flex;align-items:center;justify-content:center}
+    .profile-card{width:380px;border-radius:18px;padding:18px;background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.6));box-shadow:var(--shadow);display:flex;gap:14px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:14px;overflow:hidden;flex-shrink:0}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .profile-meta{flex:1}
+    .meta-name{font-weight:700;font-size:1.05rem}
+    .meta-role{color:var(--muted);font-weight:600;font-size:0.95rem}
+
+    /* floating shapes */
+    .shapes{position:absolute;pointer-events:none;z-index:0}
+    .shape{position:absolute;filter:blur(18px);opacity:.65}
+
+    /* ---------- Sections ---------- */
+    section{margin-top:28px}
+    .section-title{font-size:1.2rem;margin-bottom:12px}
+
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    .card{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.9));padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+
+    /* Skills */
+    .skills-grid{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,rgba(139,182,255,0.25),rgba(205,180,219,0.18));color:#0f1724;font-weight:600;font-size:0.92rem}
+
+    /* Timeline */
+    .timeline{position:relative;padding-left:20px}
+    .timeline::before{content:'';position:absolute;left:8px;top:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent-2),var(--accent));border-radius:4px}
+    .event{position:relative;margin-bottom:18px;padding:12px 14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .event .marker{position:absolute;left:-28px;top:12px;width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--accent-3));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .muted{color:var(--muted)}
+
+    /* Projects grid */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);box-shadow:var(--shadow);cursor:pointer;transition:transform .24s ease}
+    .project:hover{transform:translateY(-6px)}
+    .project img{border-radius:8px;margin-bottom:10px}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,7,18,0.5);z-index:9999;padding:20px}
+    .modal.open{display:flex}
+    .modal-panel{width:min(880px,96%);background:#fff;padding:20px;border-radius:12px;box-shadow:0 30px 80px rgba(2,6,23,0.2)}
+    .modal-header{display:flex;justify-content:space-between;align-items:center}
+    .close{background:transparent;border:none;font-size:20px;cursor:pointer}
+
+    /* Contact */
+    .contact-grid" style="grid-template-columns:1fr !important;{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .field{display:flex;flex-direction:column;margin-bottom:8px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.06);font-size:14px}
+    button[type=submit]{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:10px 14px;border-radius:10px;color:#06202e;font-weight:700;cursor:pointer}
+
+    /* Responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.two-col{grid-template-columns:1fr}.profile-card{width:100%}.contact-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <div class="logo">AS</div>
+        <div>
+          <div style="font-weight:700">Ayushi Sahu</div>
+          <div style="font-size:13px;color:var(--muted)">Frontend Developer (Angular)</div>
+        </div>
+      </div>
+      <div class="nav-links" id="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Floating pastel shapes -->
+    <div class="shapes" aria-hidden="true">
+      <svg class="shape" width="220" height="220" style="left:-20px;top:120px;opacity:.18;transform:rotate(12deg);" viewBox="0 0 200 200">
+        <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#cdb4db"/><stop offset="1" stop-color="#8ab6ff"/></linearGradient></defs>
+        <circle cx="100" cy="100" r="80" fill="url(#g1)" />
+      </svg>
+      <svg class="shape" width="160" height="160" style="right:-10px;top:40px;opacity:.12;transform:rotate(-8deg);" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="80" fill="#bde4c7" />
+      </svg>
+    </div>
+
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero section">
+      <div class="hero-left">
+        <div class="eyebrow">Hello — I’m Ayushi</div>
+        <h1>Frontend Developer building thoughtful, accessible interfaces</h1>
+        <p class="sub">Ayushi Sahu is a Frontend Developer with 4+ years of experience specializing in building scalable, high-performance Angular applications using Angular 12–15, TypeScript, RxJS, HTML5, SCSS, and modern frontend architecture. She is passionate about performance tuning, clean architecture, responsive UI/UX, and WCAG-compliant accessibility.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="Ayushi Sahu CV- pdf .pdf" download>Download Resume</a>
+          <a class="btn btn-ghost" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="profile-card" role="region" aria-label="Profile card">
+          <div class="avatar">
+            <img src="images/pp.jpg alt="Profile picture of Ayushi">
+          </div>
+          <div class="profile-meta">
+            <div class="meta-name">Ayushi Sahu</div>
+            <div class="meta-role">Frontend Developer (Angular)</div>
+            <div style="margin-top:8px;color:var(--muted);font-size:13px">Noida, India • ayushisahu415@gmail.com</div>
+            <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn-ghost" href="https://linkedin.com/in/ayushi-sahu1999" target="_blank">LinkedIn</a>
+              <a class="btn-ghost" href="https://github.com/Ayushiweb" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">About</div>
+      <div class="two-col">
+        <div class="card">
+          <p>Ayushi is a Frontend Developer with 4 years of experience building scalable, high-performance Angular applications. Skilled in TypeScript, RxJS, NgRx concepts, modular component architecture, API integration, responsive UI, accessibility, and performance optimization. She enjoys solving real-world user problems, working with clean architecture, and creating seamless user experiences.</p>
+
+          <h4 style="margin-top:12px">Education</h4>
+          <p class="muted">B.Tech — Computer Science, Technocrats Institute of Technology and Science, Bhopal — 2021</p>
+
+          <h4 style="margin-top:12px">Work Philosophy</h4>
+          <ul>
+            <li>Clean code</li>
+            <li>Scalable architecture</li>
+            <li>User-centered design</li>
+            <li>Continuous improvement</li>
+          </ul>
+        </div>
+
+        <aside class="card">
+          <div style="text-align:center;margin-bottom:12px"><strong>Quick Facts</strong></div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between"><span class="muted">Experience</span><strong>4+ years</strong></div>
+            <div style="display:flex;justify-content:space-between"><span class="muted">Focus</span><strong>Angular, Performance, UX</strong></div>
+            <div style="display:flex;justify-content:space-between"><span class="muted">Design</span><strong>Figma & Adobe XD</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">Skills</div>
+      <div class="card">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div><strong>Frontend Technologies</strong></div>
+          <div class="skills-grid" aria-hidden="false">
+            <span class="skill">Angular 8,12–15</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">RxJS</span>
+            <span class="skill">NgRx (concepts)</span>
+            <span class="skill">HTML5 & SCSS</span>
+            <span class="skill">Angular Material</span>
+          </div>
+
+          <div style="margin-top:12px"><strong>Tools & Practices</strong></div>
+          <div class="skills-grid">
+            <span class="skill">Git • GitHub</span>
+            <span class="skill">Figma • Adobe XD</span>
+            <span class="skill">Jasmine • Unit Testing</span>
+            <span class="skill">Jira • Confluence</span>
+            <span class="skill">Storybook</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-title">Experience</div>
+      <div class="timeline card">
+        <div class="event">
+          <div class="marker">A</div>
+          <div style="font-weight:700">Accenture — Frontend Developer</div>
+          <div class="muted">Sept 2021 – Present</div>
+          <ul style="margin-top:8px">
+            <li>Built modular Angular components (Angular 8–15) for enterprise clients (Credit Suisse, AXA, Allianz).</li>
+            <li>Improved app performance by 25% using optimized change detection & lazy loading.</li>
+            <li>Created 30+ wireframes and responsive prototypes using Figma/Adobe XD used by 1000+ internal users.</li>
+            <li>Integrated RESTful APIs with real-time data using RxJS.</li>
+            <li>Implemented i18n multilingual support increasing usage by 50%.</li>
+            <li>Contributed to an internal UI component library for scalable modules.</li>
+            <li>Authored architecture docs and onboarding material; collaborated in Agile sprints using Jira/Confluence.</li>
+          </ul>
+        </div>
+
+        <div class="event">
+          <div class="marker">I</div>
+          <div style="font-weight:700">UI/UX Developer Intern — Wyreflow Technologies</div>
+          <div class="muted">Internship</div>
+          <ul style="margin-top:8px">
+            <li>Assisted in UI design and prototyping.</li>
+            <li>Worked on layout improvements and basic user research.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title">Projects</div>
+      <div class="projects-grid">
+
+        <div class="project" data-id="credit" tabindex="0">
+          
+          <div style="font-weight:700">Credit Suisse — Client Portal</div>
+          <div class="muted">Angular 15 • Figma • REST APIs</div>
+          <p style="margin-top:8px;color:var(--muted)">Responsive enterprise portal with 30+ wireframes and a 30% engagement uplift.</p>
+        </div>
+
+        <div class="project" data-id="axa" tabindex="0">
+          
+          <div style="font-weight:700">AXA — Product Factory Platform</div>
+          <div class="muted">Angular 8 • Lazy Loading</div>
+          <p style="margin-top:8px;color:var(--muted)">Single Page App improving load times by 25% via lazy-loading & change-detection optimizations.</p>
+        </div>
+
+        <div class="project" data-id="nextcare" tabindex="0">
+          
+          <div style="font-weight:700">Nextcare (Allianz) — Healthcare Platform</div>
+          <div class="muted">Angular 15 • RxJS • i18n</div>
+          <p style="margin-top:8px;color:var(--muted)">Modular components and real-time updates with RxJS; i18n support increased reach.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">Contact</div>
+      <div class="card contact-grid">
+        
+
+        <aside style="padding:12px">
+          <div style="margin-bottom:10px"><strong>Location</strong><div class="muted">Noida, India</div></div>
+          <div style="margin-bottom:10px"><strong>Email</strong><div class="muted">ayushisahu415@gmail.com</div></div>
+          <div style="margin-bottom:10px"><strong>Phone</strong><div class="muted">+91 9653088436</div></div>
+          <div style="margin-top:8px"><a href="https://linkedin.com/in/ayushi-sahu1999" target="_blank">LinkedIn</a> • <a href="https://github.com/Ayushiweb" target="_blank">GitHub</a></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer style="text-align:center;margin-top:28px;color:var(--muted);font-size:13px">© 2025 Ayushi Sahu — Frontend Developer</footer>
+  </div>
+
+  <!-- Project modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h3 id="modal-title">Project</h3>
+        <button class="close" id="modal-close" aria-label="Close">✕</button>
+      </div>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Theme toggle small button -->
+  <button id="theme" style="position:fixed;right:18px;bottom:18px;background:transparent;border:1px solid rgba(15,23,36,0.06);padding:10px;border-radius:12px;cursor:pointer">Toggle Theme</button>
+
+  <script>
+    // Smooth scroll active nav
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function onScroll(){
+      const y = window.scrollY + window.innerHeight*0.18;
+      let current = '';
+      sections.forEach(sec => { if(sec.offsetTop <= y) current = sec.id; });
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+current));
+    }
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Project modal data
+    const projects = {
+      credit:{title:'Credit Suisse — Client Portal',desc:`Developed a responsive client portal with 30+ screens. Key highlights:
+• Built reusable Angular 15 components
+• Improved engagement by 30%
+• Accessibility & performance improvements`},
+      axa:{title:'AXA — Product Factory Platform',desc:`Built SPA with dynamic routing and lazy-loaded modules.
+• Angular 8 components
+• 25% load improvement
+• Reusable shared modules`},
+      nextcare:{title:'Nextcare (Allianz) — Healthcare Platform',desc:`Built modular Angular 15 components with RxJS-driven updates.
+• i18n support
+• Real-time API integration
+• Integrated CleverTap analytics`}
+    };
+
+    document.querySelectorAll('.project').forEach(el=>{
+      el.addEventListener('click',()=>openProject(el.dataset.id));
+      el.addEventListener('keydown',(e)=>{ if(e.key==='Enter') openProject(el.dataset.id); });
+    });
+
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalClose = document.getElementById('modal-close');
+    function openProject(id){
+      const p = projects[id];
+      modalContent.innerHTML = `<h4 style=\"margin-top:0\">${p.title}</h4><p style=\"white-space:pre-line; color:var(--muted)\">${p.desc}</p><p style=\"margin-top:12px\"><strong>Tech:</strong> Angular • TypeScript • RxJS • SCSS</p>`;
+      modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); modalClose.focus();
+    }
+    modalClose.addEventListener('click',()=>{ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); });
+    modal.addEventListener('click',(e)=>{ if(e.target===modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }});
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'&&modal.classList.contains('open')){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }});
+
+    // Theme toggle 
+    const themeBtn = document.getElementById('theme');
+    function applyTheme(mode){
+      if(mode==='dark'){
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme','dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme','light');
+      }
+    }
+    // initial
+    applyTheme(localStorage.getItem('theme')||'light');
+
+    themeBtn.addEventListener('click',()=>{
+      const current = localStorage.getItem('theme')==='dark'?'light':'dark';
+      applyTheme(current);
+    });
+
+    // Simple reveal on load for hero & projects
+    window.addEventListener('load',()=>{ document.querySelectorAll('.project').forEach((p,i)=> setTimeout(()=> p.style.opacity=1, 120*i)); });
+  </script>
+</body>
+</html>
